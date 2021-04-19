@@ -1,0 +1,24 @@
+
+<form [formGroup]="form" (ngSubmit)="save.emit(form.value)" >
+  <div class="mb-3">
+    <label>Jméno</label>
+    <input type="text" class="form-control" formControlName="name">
+  </div>
+
+  <div class="mb-3">
+    <label>IpAdresa</label>
+    <input type ="text" class="form-control" formControlName="ipAddress">
+  </div>
+
+  <div class="mb-3">
+    <label>MacAdresa</label>
+    <input type ="text" class="form-control" formControlName="macAddress">
+  </div>
+
+  <div class="mb-3">
+    <label>OS</label>
+    <input type ="text" class="form-control" formControlName="os">
+  </div>
+  <button class="btn btn-primary" type="submit">Uložit</button>
+</form>
+

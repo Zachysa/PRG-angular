@@ -1,0 +1,9 @@
+<h1><p class="fs-1">Nová záloha</p></h1>
+<br>
+<br>
+<app-new-config [form]="form" (save)="save()" (delete)="delete($event)"></app-new-config>
+<div class="card">
+  <a class="btn btn-primary" routerLink="/new_job/time"><p class="fs-4">Nový čas</p></a>
+<br>
+  <a class="btn btn-primary" routerLink="/new_job/storage"><p class="fs-4">Nové uložiště</p></a>
+</div>

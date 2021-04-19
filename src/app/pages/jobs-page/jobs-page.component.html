@@ -1,0 +1,12 @@
+<h1>Tabulka záloh</h1>
+<app-config-table [config]="config|async"
+                  [time]="time|async"
+                  [storage]="storage|async"
+                  (deleteC)="deleteConfig($event)"
+                  (deleteT)="deleteTime($event)"
+                  (deleteS)="deleteStorage($event)"
+></app-config-table>
+
+
+
+

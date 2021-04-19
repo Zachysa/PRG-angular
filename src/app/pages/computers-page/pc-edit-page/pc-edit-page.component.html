@@ -1,0 +1,7 @@
+<h1>Úprava Pc</h1>
+
+<div *ngIf="Pc | async as pc">
+
+  <app-pc-form [form]="form" (save)="save(pc)"></app-pc-form>
+</div>
+

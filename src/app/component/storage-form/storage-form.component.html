@@ -1,0 +1,38 @@
+<form [formGroup]="form" (ngSubmit)="save.emit(form.value)" >
+
+  <div class="mb-3">
+    <label>ID  zálohy:</label>
+    <input type="number" class="form-control" formControlName="idConfig">
+  </div>
+
+<div class="mb-3">
+  <label>Cesta zálohy:</label>
+  <input type="text" class="form-control" formControlName="path">
+</div>
+
+  <div class="mb-3">
+    <label>Server IP:</label>
+    <input type="text" class="form-control" formControlName="serverIP">
+  </div>
+
+  <div class="mb-3">
+    <label>Heslo na sever:</label>
+    <input type="text" class="form-control" formControlName="serverPass">
+  </div>
+
+  <div class="mb-3">
+    <label>Server login:</label>
+    <input type="text" class="form-control" formControlName="serverLogin">
+  </div>
+
+<div class="form-group">
+  <label>Umístění: </label>
+  <select class="form-select" aria-label="Default select example" formControlName="place">
+
+    <option value="1">Lokálně</option>
+    <option value="2">FTP</option>
+
+  </select>
+</div>
+  <button class="btn btn-primary" type="submit" data-toggle="tooltip" data-placement="down" title="Vytvoření nového úložiště">Uložit</button>
+</form>

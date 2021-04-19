@@ -1,0 +1,20 @@
+<div class="application">
+  <ul class="menu">
+    <li>
+      <a routerLink="/dashboard"><p class="fs-4">Dashboard</p></a>
+    </li>
+    <li>
+      <a routerLink="/computers"><p class="fs-4">Computers</p></a>
+    </li>
+    <li>
+      <a routerLink="/new_job"><p class="fs-4">New job</p></a>
+    </li>
+    <li>
+      <a routerLink="/jobs"><p class="fs-4">Jobs</p></a>
+    </li>
+  </ul>
+    <div class="content">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+<button class="btn btn-warning" (click)="Logout()" routerLink="/login">ODHLÁSIT SE</button>

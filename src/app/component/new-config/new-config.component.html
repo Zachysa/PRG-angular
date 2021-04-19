@@ -1,0 +1,35 @@
+<form [formGroup]="form" (ngSubmit)="save.emit(form.value)" >
+
+  <div class="mb-3">
+    <label><p class="fs-5">Jméno zálohy:</p> </label>
+    <input type="text" class="form-control" formControlName="name" placeholder="Jméno">
+  </div>
+
+  <div class="mb-3">
+    <label><p class="fs-5">Email:</p> </label>
+    <input type="text" class="form-control" formControlName="email" placeholder="Email">
+
+  </div>
+
+  <label><p class="fs-5">Typ:</p> </label>
+  <select class="form-select" aria-label="Default select example" formControlName="type" data-toggle="tooltip" data-placement="top" title="Algoritmus zálohy">
+
+    <option value="1">Plná</option>
+    <option value="2">Diferenciální</option>
+    <option value="3">Inkrementální</option>
+  </select>
+
+<p></p>
+
+  <div class="form-group">
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="emailBool" id="emailBool" formControlName="emailBool">
+    <label class="form-check-label" for="emailBool">
+      <p class="fs-5"> Poslat na Email</p>
+    </label>
+  </div>
+  </div>
+
+
+  <button class="btn btn-primary" type="submit"><p class="fs-5">Uložit</p></button>
+</form>

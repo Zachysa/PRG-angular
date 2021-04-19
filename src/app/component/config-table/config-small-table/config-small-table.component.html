@@ -1,0 +1,25 @@
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th scope="col">ID</th>
+    <th scope="col">Název</th>
+
+
+
+  </tr>
+  </thead>
+  <tbody>
+
+  <tr scope="row"*ngFor="let config of config">
+
+    <td>
+      {{config.id}}
+    </td>
+    <td>
+      {{config.name}}
+    </td>
+
+  </tr>
+
+  </tbody>
+</table>

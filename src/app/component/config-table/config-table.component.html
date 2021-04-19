@@ -1,0 +1,119 @@
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th scope="col">ID</th>
+    <th scope="col">Název</th>
+    <th scope="col">Email</th>
+    <th scope="col">Poslat na Email</th>
+    <th scope="col">Typ</th>
+    <th scope="col">Editace zálohy</th>
+    <th scope="col">Datum</th>
+    <th scope="col">Frekvence</th>
+    <th scope="col">Den v týdnu</th>
+    <th scope="col">Editace času</th>
+    <th scope="col">Umístění</th>
+    <th scope="col">Cesta</th>
+    <th scope="col">ServerIP</th>
+    <th scope="col">Editace úložiště</th>
+
+
+  </tr>
+  </thead>
+  <tbody>
+
+  <tr scope="row"*ngFor="let config of config">
+
+    <td>
+     {{config.id}}
+    </td>
+    <td>
+      {{config.name}}
+    </td>
+    <td>
+      {{config.email}}
+    </td>
+    <td>
+      {{config.emailBool}}
+    </td>
+    <td>
+      {{config.type}}
+    </td>
+    <td>
+      <div class="btn-group" role="group" aria-label="Basic example">
+          <a type="button" class="btn btn-primary" [routerLink]="['/jobs/', config.id]" ><i class="bi bi-pencil-square"></i></a>
+         <button type="button" class="btn btn-danger" (click)="deleteConfig(config)">
+        <i class="bi bi-trash"></i>
+      </button>
+      </div>
+
+    </td>
+    <td>
+      <div *ngFor="let time of time">
+        <div *ngIf="(config.id == time.idConfig)">
+          {{time.date}}</div>
+              </div>
+    </td>
+    <td>
+      <div *ngFor="let time of time">
+        <div *ngIf="(config.id == time.idConfig)">{{time.frequency}}</div>
+      </div>
+    </td>
+    <td>
+      <div *ngFor="let time of time">
+        <div *ngIf="(config.id == time.idConfig)">{{time.days}}
+             </div>
+      </div>
+    </td>
+    <td>
+      <div *ngFor="let time of time">
+        <div *ngIf="(config.id == time.idConfig)">
+          <div class="btn-group" role="group" aria-label="Basic example">
+          <a type="button" class="btn btn-primary" [routerLink]="['/jobs/time/', time.id]" ><i class="bi bi-pencil-square"></i></a>
+          <button type="button" class="btn btn-danger" (click)="deleteTime(time)">
+            <i class="bi bi-trash"></i>
+          </button>
+          </div>
+        </div>
+      </div>
+    </td>
+
+
+
+    <td>
+      <div *ngFor="let storage of storage">
+        <div *ngIf="(config.id == storage.idConfig)">{{storage.place}}</div>
+      </div>
+    </td>
+    <td>
+      <div *ngFor="let storage of storage">
+        <div *ngIf="(config.id == storage.idConfig)">{{storage.path}}</div>
+      </div>
+    </td>
+    <td>
+      <div *ngFor="let storage of storage">
+        <div *ngIf="(config.id == storage.idConfig)">{{storage.serverIP}}</div>
+      </div>
+    </td>
+    <td>
+      <div *ngFor="let storage of storage">
+        <div *ngIf="(config.id == storage.idConfig)">
+          <div class="btn-group" role="group" aria-label="Basic example">
+          <a type="button" class="btn btn-primary" [routerLink]="['/jobs/storage/', storage.id]" ><i class="bi bi-pencil-square"></i></a>
+          <button type="button" class="btn btn-danger" (click)="deleteStorage(storage)">
+            <i class="bi bi-trash"></i>
+          </button>
+          </div>
+        </div>
+      </div>
+    </td>
+
+
+
+
+
+  </tr>
+
+  </tbody>
+  </table>
+
+
